@@ -1,0 +1,23 @@
+name: Build Firmware
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build with PlatformIO
+        uses: platformio/platformio-ci-action@v1
+        with:
+          project-dir: firmware
+          environments: esp32dev
