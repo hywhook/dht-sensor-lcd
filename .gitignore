@@ -1,0 +1,9 @@
+# Archivos que PlatformIO / Arduino generan y no deben versionarse
+.pio/
+.pioenvs/
+.piolibdeps/
+.vscode/
+*.bin
+*.elf
+*.map
+.DS_Store
